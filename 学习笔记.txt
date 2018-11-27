@@ -1,0 +1,141 @@
+JFrame 自定义图标：
+
+BufferedImage image = null;
+try {
+    image = ImageIO.read(frame.getClass().getResource("./icon.jpg"));
+} catch (IOException e) {
+    e.printStackTrace();
+}
+frame.setIconImage(image);
+
+
+画图片：
+                Toolkit toolkit = this.getToolkit();
+                Image image = toolkit.getImage("D:\\图片\\编程图片\\坦克大战\\1.jpeg");
+                g.drawImage(image,enemies.get(i).getX(),enemies.get(i).getY(),50,50,this);
+
+
+ String.valueOf(char[]data) 才返回字符串，而chars.toString() 返回整数串；
+
+ java不支持默认参数值，只能通过方法重载来实现。
+
+   /**
+      * 关于相对路径，我有话说：
+      * dir(user)
+      *即Jvm根目录是你所建立的工程下，及src的上层，相对路径从src开始写，相对路径不加/
+      *
+      * ./
+      * /
+      * non
+      * ../
+      *
+      * https://blog.csdn.net/u014476019/article/details/45876785
+      */
+
+
+Integer.valueOf("-1111000")----允许负数的
+java 有一个栈类，不用自己编写
+
+ctrl+B: 快速定位到光标所在处定义的方法处
+ctrl+Z VS ctrl+shift+Z
+
+
+
+    //发现这个字符串比较用得比较多，写一个通用函数：
+    //功能：将字符串按ASCII 大小顺序 从小到大排序
+    public String stringSort(String s){
+        if(s.equals("")||s.length()==1) return s; //空串、 单字母串
+        else{ // 多长度串
+        //冒泡排序
+            char [] c = s.toCharArray();
+            for (int i =0; i<s.length()-1 ; i++ ) {
+                for (int j =i+1;j<s.length() ; j++ ){
+                    if(c[i]>c[j]){
+                        char temp = c[i];
+                        c[i] = c[j];
+                        c[j] = temp;
+                    }
+                }
+            }
+            return c.toString;
+        }
+    }
+
+
+Java 不支持泛型数组
+用 matrix =(T[][]) (new Object[row][column]);实现泛型数组
+
+反射机制：jVM在运行时，对于任意一个类，可以获得其所有的方法、变量
+
+Scanner读取数据是按空格符，这其中包括空格键，Tab键，Enter键。（java.util ）
+(util: utility  效用)
+BufferedReader readLine()是按Enter回车来读取一行数据的,  比Scanner要快
+
+换行：String str = "aaa"+System.getProperty("line.separator");
+
+java.lang.ArrayIndexOutOfBoundsException: 0
+0下标越界：说明数组维数为0；
+
+Scanner 如果关闭的话，会导致System.in关闭，结果无法再启用
+
+打印数组元素的简单方法： Arrays.toString( arr[])  仅一维数组
+
+
+内部类，不需要修限制符，只有含该类的类可以访问
+
+**去掉小数点后无用的0：
+c = c.replaceAll("0+?$", "");//去掉多余的0
+c = c.replaceAll("[.]$", "");//如最后一位是.则去掉
+
+
+
+
+1.double保留小数点后一位
+
+DecimalFormat df = new DecimalFormat("#.0");
+df.format(0.999999);
+同理，保留小数点后两位
+
+DecimalFormat df = new DecimalFormat("#.00");
+df.format(0.999999);
+同理保留小数点后零位
+
+DecimalFormat df = new DecimalFormat("#");
+df.format(0.999999);
+
+2.double转int
+
+int num = (new Double(0.999999)).intValue();
+或
+
+int num = (int）0.999999;
+
+RMB :\u00A5
+
+public int fibonacci(int n) {
+        int a = 0;
+        int b = 1;
+        for (int i = 1; i < n; i++) {
+            b = b + a;
+            a = b - a;
+        }
+        return a;
+    }
+
+
+float a = 1.2323; 报错，因为Java默认带小数点的为 double
+
+千万不要：
+for(int j =0 ;j<a.length;j++){
+    a+="9";
+    //j每次都会判断的
+}
+
+注意：数据太大太小，jvm都会自动先转化为科学记数法，可以通过：
+DecimalFormat  来解决
+
+设置在创建类时自动添加作者、时间等注释：
+Crtl+Alt+S ---> File and Code Templates  --->File Header ---> 输入
+/**
+ * Created by ${USER} on ${DATE} ${TIME}
+ */

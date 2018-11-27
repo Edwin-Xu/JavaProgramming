@@ -1,0 +1,14 @@
+1.类需要implements 接口ActionListener，其方法public void actionProformed（ActionEvent e）需要实现，快捷键alt+insert;
+  该方法里写入事件处理方式
+
+2.事件处理的原理是 事件源发出信号，给事件监听者（本类this或者其他）处理。
+
+3.事件源：需要添加监听者
+            a.addActionListener(this/监听主体)
+4.事件命令：为每个事件添加事件触发是发送的信息，供监听主体捕获
+            a.addActionCommand(String)
+5.java.awt.event.*
+
+6.实现的方法里判断ActionEvent e 所捕获的command 字符记号，e.getCommand(),根据记号设置处理方式（不同事件同一记号，
+  可以对不同事件产生同一响应）
+  +

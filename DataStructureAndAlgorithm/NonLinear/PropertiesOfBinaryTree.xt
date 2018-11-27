@@ -1,0 +1,22 @@
+Property 6. (IMPORTANT)
+
+Let i, 0<=i<=n-1,be the number assigned to an element of a complete binary tree. The following are true.
+1) if i=0, then this element is the root of the binary tree.
+    if i>0,then the parent of this element has been assigned the number  |_(i-1)/2_|
+2) if 2*i+1>=n,then this element has no left child. Otherwise,its left child has been assigned the number 2*i+1.
+3) if 2*i+2>=n, then this element has no right child, Otherwise its right child has been assigned the number 2*i+2.
+4)结点i所在的层次是：|_log2(i-1)_| + 1
+
+
+
+二叉树相关知识：
+建立一棵二叉树的方法
+1.利用MakeTree函数
+2.利用先序、中序唯一的构造一棵二叉树
+            先序：ABDCEGFHI
+            中序：DBAEGCHFI
+3.利用二叉树的广义表表示来构造一棵二叉树
+                   A(B(D), C(E( ,G), F(H,I)))
+4.利用二叉树的后缀表示来构造一棵二叉树
+         (a+b)*c    ---> ab+c*
+

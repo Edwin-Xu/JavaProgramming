@@ -1,0 +1,14 @@
+求字符串中is and not两个字串个数是否相同：
+
+public boolean equalIsNot(String str) {
+   String s = str.replaceAll("is","");
+   int is = (str.length()-s.length());
+
+   String s1 = str.replaceAll("not","");
+   int not = str.length()-s1.length();
+
+   if(is*3==not*2){
+     return true;
+   }
+   else return false;
+}

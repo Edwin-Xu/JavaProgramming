@@ -1,0 +1,5 @@
+查看底层源码：
+
+Ctrl + Shift+i	出现类似于预览的小窗口
+Ctrl + Enter	（接上步）完全打开源码
+Ctrl + 鼠标左键	一步到位打开源码 = Ctrl + Shift+i –>Ctrl + Enter

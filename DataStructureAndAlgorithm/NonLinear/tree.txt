@@ -1,0 +1,72 @@
+public void printPreByIteration() {
+                if(root == null) {
+                    return;
+                }
+                LinkedList<Node> stack = new LinkedList<>();
+                Node current = root;
+                while(current != null || !stack.isEmpty()) {
+                    if(current != null) {//一直遍历左子树，添加节点，并打印
+                        stack.push(current);
+                        System.out.println(current);
+                        current = current.left;
+                    }else {//遇到空节点，就谈一个节点，然后指向右节点
+                        current = stack.pop();
+                        current = current.right;
+                    }
+                    
+                }
+                
+            }
+
+
+
+ public void printMidByIteration() {
+                if(root == null) {
+                    return;
+                }
+
+                Node current = root;
+                LinkedList<Node> stack = new LinkedList<>();
+                while(current != null || !stack.isEmpty()) {
+                    if(current != null) {
+                        stack.push(current);
+                        current = current.left;
+                    }else {
+                        current = stack.pop();
+                        System.out.println(current);
+                        current = current.right;
+                    }
+                }
+            }
+
+
+/**
+             * 后续遍历的迭代实现
+             */
+            public void printBackByIteration() {
+                if(root == null) {
+                    return;
+                }
+
+                LinkedList<Node> stack = new LinkedList<>();
+                LinkedList<Node> output = new LinkedList<>();
+                stack.push(root);
+
+                //存放数据
+                while(!stack.isEmpty()) {
+                    Node current = stack.pop();
+                    output.push(current);
+                    if(current.left != null) {
+                        stack.push(current.left);
+                    }
+                    if(current.right != null) {
+                        stack.push(current.right);
+                    }
+
+                }
+
+                //遍历数据
+                while(!output.isEmpty()) {
+                    System.out.println(output.pop());
+                }
+            }

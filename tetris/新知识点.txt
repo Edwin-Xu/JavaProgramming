@@ -1,0 +1,2 @@
+    this.setFocusable(true); //注意： 要设置屏幕焦点，不加这句话的是不能监听普通类的。
+        this.addKeyListener(bs);

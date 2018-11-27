@@ -1,0 +1,24 @@
+创建线程的两种方式：
+1.继承Thread并重写run 方法(public void run() )
+
+2.实现接  Rrunnable ，重写run方法
+    注意：要创建一个线程才能重新启动：
+    Thread t = new Thread(实例)
+    t.start()
+
+
+线程五个过程：
+1.new
+2.runnable
+3.running
+4.blocked
+5.dead
+
+
+Thread.sleep(毫秒) 可以进入休眠（Blocked），并释放资源，过后再次进入runnable，
+
+
+对于并发错误：
+要用synchronized 将导致数据读取问题的代码块括起来
+    synchronized(this / other class){
+    }
